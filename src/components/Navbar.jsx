@@ -12,7 +12,7 @@ const Navbar = () => {
         {/*Animated hamburger button - mobile only */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden flex flex-col justify-between w-7 h-6 focus:outline-none"
+          className="md:hidden flex flex-col justify-between w-7 h-6 focus:outline-none cursor-pointer"
         >
           <span
             className={
@@ -59,6 +59,8 @@ const Navbar = () => {
           Contact Us
         </li>
       </ul>
+      <br />
+      <br />
     </nav>
   );
 };
