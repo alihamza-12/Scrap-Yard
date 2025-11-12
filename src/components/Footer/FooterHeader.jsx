@@ -1,8 +1,9 @@
 import React from "react";
-import twitter from "./images/footer/twitter.webp";
-import youtube from "./images/footer/youtube.jpeg";
-import whatsapp from "./images/footer/whatsapp2.jpg";
-import instagram from "./images/footer/instagram.webp";
+import twitter from "../images/footer/twitter.webp";
+import youtube from "../images/footer/youtube.jpeg";
+import whatsapp from "../images/footer/whatsapp2.jpg";
+
+import instagram from "../images/footer/instagram.webp";
 
 const FooterHeader = () => {
   return (
