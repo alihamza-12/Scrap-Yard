@@ -5,7 +5,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-black">
+    <nav className="bg-black sticky top-0 z-50">
       {/* On Mobile View */}
       <div className="md:hidden flex items-center justify-between bg-[#191919] px-4 py-3 md:px-8">
         <div className="text-[#D2D2D2] font-semibold text-lg">Menu</div>
@@ -45,33 +45,32 @@ const Navbar = () => {
         }
       >
         <Link to={"/"}>
-          <li className="px-3 py-2 md:px-5 md:py-4 cursor-pointer hover:bg-[#0f0e0e] hover:underline rounded">
+          <li className="px-3 py-2 md:px-5 md:py-4 lg:py-5 cursor-pointer hover:bg-[#0f0e0e] hover:underline rounded-lg">
             Home
           </li>
         </Link>
         <Link to={"/products"}>
-          <li className="px-3 py-2 md:px-5 md:py-4 cursor-pointer hover:bg-[#0f0e0e] hover:underline rounded">
+          <li className="px-3 py-2 md:px-5 md:py-4 lg:py-5 cursor-pointer hover:bg-[#0f0e0e] hover:underline rounded-lg">
             Products
           </li>
         </Link>
         <Link to={"/blogs"}>
-          <li className="px-3 py-2 md:px-5 md:py-4 cursor-pointer hover:bg-[#0f0e0e] hover:underline rounded">
+          <li className="px-3 py-2 md:px-5 md:py-4 lg:py-5 cursor-pointer hover:bg-[#0f0e0e] hover:underline rounded-lg">
             Blogs
           </li>
         </Link>
         <Link to={"/about-us"}>
-          <li className="px-3 py-2 md:px-5 md:py-4 cursor-pointer hover:bg-[#0f0e0e] hover:underline rounded">
+          <li className="px-3 py-2 md:px-5 md:py-4 lg:py-5 cursor-pointer hover:bg-[#0f0e0e] hover:underline rounded-lg">
             About Us
           </li>
         </Link>
         <Link to={"/contact-us"}>
-          <li className="px-3 py-2 md:px-5 md:py-4 cursor-pointer hover:bg-[#0f0e0e] hover:underline rounded">
+          <li className="px-3 py-2 md:px-5 md:py-4 lg:py-5 cursor-pointer hover:bg-[#0f0e0e] hover:underline rounded-lg">
             Contact Us
           </li>
         </Link>
       </ul>
-      <br />
-      <br />
+      
     </nav>
   );
 };

@@ -6,6 +6,9 @@ import Products from "./pages/Products";
 import Blogs from "./pages/Blogs";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import MyAccount from "./pages/MyAccount";
 
 const appRoute = createBrowserRouter([
   {
@@ -29,8 +32,20 @@ const appRoute = createBrowserRouter([
         element: <AboutUs />,
       },
       {
-        path: "contact-us",
+        path: "/contact-us",
         element: <ContactUs />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
+      {
+        path: "/my-account",
+        element: <MyAccount />,
       },
       {
         path: "*",
