@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,21 +44,31 @@ const Navbar = () => {
           "md:flex md:flex-row md:items-center md:justify-evenly md:space-y-0 md:px-8 md:py-0"
         }
       >
-        <li className="px-3 py-2 md:px-5 md:py-4 cursor-pointer hover:bg-[#0f0e0e] hover:underline rounded">
-          Home
-        </li>
-        <li className="px-3 py-2 md:px-5 md:py-4 cursor-pointer hover:bg-[#0f0e0e] hover:underline rounded">
-          Products
-        </li>
-        <li className="px-3 py-2 md:px-5 md:py-4 cursor-pointer hover:bg-[#0f0e0e] hover:underline rounded">
-          Blogs
-        </li>
-        <li className="px-3 py-2 md:px-5 md:py-4 cursor-pointer hover:bg-[#0f0e0e] hover:underline rounded">
-          About Us
-        </li>
-        <li className="px-3 py-2 md:px-5 md:py-4 cursor-pointer hover:bg-[#0f0e0e] hover:underline rounded">
-          Contact Us
-        </li>
+        <Link to={"/"}>
+          <li className="px-3 py-2 md:px-5 md:py-4 cursor-pointer hover:bg-[#0f0e0e] hover:underline rounded">
+            Home
+          </li>
+        </Link>
+        <Link to={"/products"}>
+          <li className="px-3 py-2 md:px-5 md:py-4 cursor-pointer hover:bg-[#0f0e0e] hover:underline rounded">
+            Products
+          </li>
+        </Link>
+        <Link to={"/blogs"}>
+          <li className="px-3 py-2 md:px-5 md:py-4 cursor-pointer hover:bg-[#0f0e0e] hover:underline rounded">
+            Blogs
+          </li>
+        </Link>
+        <Link to={"/about-us"}>
+          <li className="px-3 py-2 md:px-5 md:py-4 cursor-pointer hover:bg-[#0f0e0e] hover:underline rounded">
+            About Us
+          </li>
+        </Link>
+        <Link to={"/contact-us"}>
+          <li className="px-3 py-2 md:px-5 md:py-4 cursor-pointer hover:bg-[#0f0e0e] hover:underline rounded">
+            Contact Us
+          </li>
+        </Link>
       </ul>
       <br />
       <br />
