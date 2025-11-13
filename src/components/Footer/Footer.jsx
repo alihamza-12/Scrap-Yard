@@ -6,6 +6,7 @@ import FooterCopyRight from "./FooterCopyRight";
 const Footer = () => {
   return (
     <div className="bg-[url(./components/images/view-bg.jpg)]">
+      <p className="border-t-1 border-neutral-500 mx-30"></p>
       <FooterHeader />
       <FooterNav />
       <FooterCopyRight />
