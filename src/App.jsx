@@ -8,6 +8,26 @@ const appRoute = createBrowserRouter([
     element: <AppLayOut />,
     children: [
       {
+        path: "/",
+        element: <NotFound />,
+      },
+      {
+        path: "/products",
+        element: <NotFound />,
+      },
+      {
+        path: "/blogs",
+        element: <NotFound />,
+      },
+      {
+        path: "/about-us",
+        element: <NotFound />,
+      },
+      {
+        path: "Contact-us",
+        element: <NotFound />,
+      },
+      {
         path: "*",
         element: <NotFound />,
       },
