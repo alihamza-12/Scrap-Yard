@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import sellerIcon from "../components/images/footer/seller-icon.png";
 import buyerIcon from "../components/images/footer/buyer-icon.png";
+import { useUserRegisterMutation } from "../../store/userSlice";
 
 //Zod Schema
 const schema = z
@@ -17,7 +18,15 @@ const schema = z
       .max(11, { message: "Enter Correct 11 Digits for Phone Number" }),
     password: z
       .string()
-      .min(8, { message: "InValid Password Minimum 8 characters" }),
+      .min(8, "Password must be at least 8 characters long")
+      .max(32, "Password cannot exceed 32 characters")
+      .regex(/[a-z]/, "Password must contain at least one lowercase letter")
+      .regex(/[A-Z]/, "Password must contain at least one uppercase letter")
+      .regex(/\d/, "Password must contain at least one number")
+      .regex(
+        /[!@#$%^&*(),.?":{}|<>]/,
+        "Password must contain at least one special character"
+      ),
     confirmPass: z
       .string()
       .min(8, { message: "InValid Password Minimum 8 characters" }),
@@ -30,6 +39,7 @@ const schema = z
 
 const Register = () => {
   const [active, setActive] = useState("");
+  const [userRegister, { error }] = useUserRegisterMutation();
 
   //SetUp React Hook Form
   const {
@@ -46,7 +56,15 @@ const Register = () => {
     setValue("role", role);
   };
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
+    userRegister({
+      Email: data.email,
+      Password: data.password,
+      FullName: data.fullName,
+      Address: data.address,
+      PhoneNo: data.phoneNo,
+      Role: data.role,
+    });
   };
 
   return (
@@ -193,6 +211,11 @@ const Register = () => {
           {/* Hidden Input for Set error */}
           {errors.role && (
             <p className="text-red-400 text-sm mt-1">{errors.role.message}</p>
+          )}
+          {error && (
+            <p className="text-red-400 text-sm mt-1">
+              {error.data?.error || error.data?.message || "Something Wrong"}
+            </p>
           )}
 
           {/* Submit */}
