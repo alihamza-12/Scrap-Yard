@@ -2,7 +2,9 @@ import z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
-import { useUserRegisterMutation } from "../store/userSlice";
+import { useUserRegisterMutation } from "../store/apiSlice/userSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { setCredentials } from "../store/slices/authSlice";
 
 //Zod Schema
 const schema = z
@@ -35,6 +37,12 @@ const schema = z
   });
 
 const useRegisterForm = () => {
+  //Store Dispatch
+  const dispatch = useDispatch();
+  //Store useSelector
+  const user = useSelector((state) => state.auth.user);
+  const token = useSelector((state) => state.auth.token);
+  //state Variable
   const [active, setActive] = useState("");
   //RTK query Mutation
   const [userRegister, { error }] = useUserRegisterMutation();
@@ -53,16 +61,47 @@ const useRegisterForm = () => {
     setActive(role);
     setValue("role", role);
   };
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     // console.log(data);
-    userRegister({
+    const userResponse = await userRegister({
       Email: data.email,
       Password: data.password,
       FullName: data.fullName,
       Address: data.address,
       PhoneNo: data.phoneNo,
       Role: data.role,
-    });
+    }).unwrap();
+    //Store the Api response in the Store
+    //Dispatch
+    // console.log(userResponse)
+    dispatch(
+      setCredentials({
+        user: {
+          FullName: userResponse.FullName,
+          Address: userResponse.Address,
+          Email: userResponse.Email,
+          PhoneNo: userResponse.PhoneNo,
+          Role: userResponse.Role,
+          _id: userResponse._id,
+          transactions: userResponse.transactions,
+        },
+        token: userResponse.token,
+      })
+    );
+    // console.log(
+    //   "Registration successful: User:",
+    //   {
+    //     FullName: userResponse.FullName,
+    //     Address: userResponse.Address,
+    //     Email: userResponse.Email,
+    //     PhoneNo: userResponse.PhoneNo,
+    //     Role: userResponse.Role,
+    //     _id: userResponse._id,
+    //     transactions: userResponse.transactions,
+    //   },
+    //   "Token:",
+    //   userResponse.token
+    // );
   };
   return {
     register,
