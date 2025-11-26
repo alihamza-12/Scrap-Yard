@@ -76,7 +76,7 @@ const UserProfile = () => {
               {userData?.transactions.map((transaction, index) => (
                 <div
                   key={ index}
-                  className="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-gray-700 dark:to-gray-600 p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-green-200 dark:border-gray-600"
+                  className="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-gray-700 dark:to-gray-600 p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-green-200 dark:border-gray-600 cursor-pointer"
                 >
                   <h4 className="font-bold text-lg text-gray-800 dark:text-white mb-2">
                     Order #{ index + 1}

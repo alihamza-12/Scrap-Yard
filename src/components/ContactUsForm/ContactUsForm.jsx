@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useRef } from "react";
 import z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import contact_Us from "../../assets/contact-us.jpg";
+import emailjs from "@emailjs/browser";
 
 //Zod Schema
 const schema = z.object({
@@ -14,10 +15,12 @@ const schema = z.object({
 });
 
 const ContactUsForm = () => {
+  const form = useRef();
   //SetUp React Hook Form
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: zodResolver(schema),
@@ -26,21 +29,38 @@ const ContactUsForm = () => {
   //OnSubmit
   const onSubmit = (data) => {
     console.log(data);
+
+    // Email
+    emailjs
+      .sendForm("service_pxefgmr", "template_2cq57kq", form.current, {
+        publicKey: "8DF0ZjqLFN33Rcdf2",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+          reset();
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
   };
+
   return (
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 flex justify-center items-center mb-10">
       <div className="max-w-6xl w-full flex flex-col md:flex-row items-stretch gap-10">
         {/* Image */}
         {/* <div className="max-w-lg rounded-3xl overflow-hidden shadow-2xl h-full border-lime-500 "> */}
-          <img
-            src={contact_Us}
-            alt="Contact Us"
-            className="w-1/2 rounded-3xl shadow-2xl"
-          />
+        <img
+          src={contact_Us}
+          alt="Contact Us"
+          className="w-1/2 rounded-3xl shadow-2xl"
+        />
         {/* </div> */}
         {/* Form */}
         <div className="flex-1 w-full max-w-md h-full">
           <form
+            ref={form}
             onSubmit={handleSubmit(onSubmit)}
             className="w-full p-8 bg-gradient-to-br from-gray-900 to-black rounded-3xl shadow-2xl border border-orange-500/20"
           >
@@ -111,7 +131,6 @@ const ContactUsForm = () => {
               <textarea
                 className="bg-gray-800 p-3 rounded-xl w-full border border-orange-500/30 focus:ring-2 focus:ring-orange-400 focus:border-orange-400 outline-none transition-all duration-300 text-white placeholder-gray-400"
                 {...register("textmsg")}
-                
                 // cols="30"
                 rows="3"
                 placeholder="Enter your Message"
