@@ -9,6 +9,7 @@ import ContactUs from "./pages/ContactUs";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import MyAccount from "./pages/MyAccount";
+import BlogsDetail from "./pages/BlogsDetail";
 
 const appRoute = createBrowserRouter([
   {
@@ -27,6 +28,11 @@ const appRoute = createBrowserRouter([
         path: "/blogs",
         element: <Blogs />,
       },
+      {
+        path: "/blogs/:id",
+        element: <BlogsDetail />,
+      },
+
       {
         path: "/about-us",
         element: <AboutUs />,

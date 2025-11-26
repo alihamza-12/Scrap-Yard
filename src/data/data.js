@@ -40,7 +40,7 @@ export const blogData = [
     id: 6,
     imgSrc: blog6,
     title: "The Importance of Recycling: How Every Small Effort Counts",
-    desc: "Emphasize the importance of recycling and how individual efforts contribute to a larger environmental impact. Encourage readers to adopt sustainable practices in their daily lives. Recycling is more than just a buzzword; it’s a critical practice for preserving our planet. Every small effort counts, and here’s why recycling should be an integral part of your daily routine.",
+    desc: "Emphasize the importance of recycling and how individual efforts contribute to a larger environmental impact. Encourage readers to adopt sustainable practices in their daily lives. Recycling is more than just a buzzword",
   },
 ];
 export const products = [
