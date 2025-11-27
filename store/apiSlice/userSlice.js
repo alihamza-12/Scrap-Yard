@@ -17,7 +17,13 @@ export const authApi = createApi({
         body,
       }),
     }),
+    getProducts: builder.query({
+      query: () => ({
+        url: "admin/products",
+        method: "GET",
+      }),
+    }),
   }),
 });
 
-export const { useUserRegisterMutation, useUserLoginMutation } = authApi;
+export const { useUserRegisterMutation, useUserLoginMutation ,useGetProductsQuery } = authApi;
