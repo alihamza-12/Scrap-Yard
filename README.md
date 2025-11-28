@@ -14,7 +14,7 @@ A comprehensive React-based web application for scrap yard management, built wit
 ### Content Management
 
 - **Blogs System**: Comprehensive blog platform with 6 detailed articles covering environmental impact, scrap monetization, household items, recycling innovations, success stories, and recycling importance. Features rich content display with structured articles, images, and navigation.
-- **Products Section**: Dedicated page for showcasing scrap yard products and services.
+- **Products Section**: Comprehensive product management with a listing page displaying scrap yard products in a responsive grid layout, including images, titles, descriptions, and prices. Individual product detail pages provide full product information and navigation back to the product listing.
 - **About Us**: Information page about the scrap yard business.
 - **Contact Us**: Interactive contact form with email sending capability using EmailJS.
 
@@ -158,7 +158,8 @@ scarb-yard/
 │   │   ├── Home.jsx              # Landing/home page
 │   │   ├── Login.jsx             # User login page
 │   │   ├── MyAccount.jsx         # User account management page
-│   │   ├── Products.jsx          # Products/services listing page
+│   │   ├── ProductDetail.jsx     # Individual product detail page with full product information, image, description, and price
+│   │   ├── Products.jsx          # Products listing page displaying scrap yard products in a responsive grid with images, titles, descriptions, and prices
 │   │   └── Register.jsx          # User registration page
 │   ├── App.jsx                   # Main application component with routing configuration
 │   ├── index.css                 # Global CSS styles and Tailwind imports
@@ -192,6 +193,12 @@ scarb-yard/
 - **Dynamic Routing**: Individual blog posts accessed via `/blogs/:id` route
 - **Responsive Display**: Grid layout adapting to different screen sizes
 
+### Products System
+
+- **Dynamic Data**: Product listings fetched from API using RTK Query for real-time data
+- **Product Details**: Individual product pages accessed via dynamic routing `/product/:id`
+- **Responsive Display**: Grid and detail layouts adapting to different screen sizes with hover effects and transitions
+
 ### Contact Form
 
 - **EmailJS Integration**: Form submissions sent directly to business email without backend
@@ -204,8 +211,9 @@ scarb-yard/
 2. **User Registration**: Visit `/register` to create a new account with form validation
 3. **Authentication**: Login at `/login` to access protected features
 4. **Blog Reading**: Browse 6 comprehensive blog articles on `/blogs` covering environmental impact, scrap monetization, household items, recycling innovations, success stories, and recycling importance. Click "Read More" for detailed structured content with images and navigation.
-5. **Contact**: Use the contact form on `/contact-us` to send inquiries
-6. **Account Management**: Access `/my-account` for user profile and transaction history
+5. **Product Browsing**: View available scrap yard products on `/products` with a responsive grid display. Click "View Product" on any item to access detailed information including full description and pricing.
+6. **Contact**: Use the contact form on `/contact-us` to send inquiries
+7. **Account Management**: Access `/my-account` for user profile and transaction history
 
 ## Scripts
 
