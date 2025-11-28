@@ -14,6 +14,7 @@ const BlogsDetail = () => {
   return (
     <div>
       <PageLayOut />
+      {/* Blog */}
       <div className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 py-12 px-4 sm:px-6 lg:px-8 min-h-screen">
         {url.id == 1 ? (
           <article className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 max-w-4xl mx-auto">

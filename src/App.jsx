@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import MyAccount from "./pages/MyAccount";
 import BlogsDetail from "./pages/BlogsDetail";
+import ProductDetail from "./pages/ProductDetail";
 
 const appRoute = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const appRoute = createBrowserRouter([
       {
         path: "/products",
         element: <Products />,
+      },
+      {
+        path: "/product/:id",
+        element: <ProductDetail />,
       },
       {
         path: "/blogs",
