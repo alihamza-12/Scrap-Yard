@@ -241,3 +241,8 @@ scarb-yard/
 ## License
 
 This project is open source and available under the MIT License.
+
+
+
+
+make Two new folders(Products,Blogs) in the component and then files ProductsCompoent.jsx import in the products.jsx and then also then files BlogsCompoent.jsx import in the Blogs.jsx

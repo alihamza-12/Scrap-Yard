@@ -20,7 +20,7 @@ const Header = () => {
     dispatch(logout());
   };
   return (
-    <div>
+    <div className="relative z-10">
       {/* Header Bar */}
       <div className="flex flex-wrap items-center justify-center gap-3 px-4 py-3 sm:justify-between sm:px-6 md:px-10 lg:px-12 md:py-6 lg:py-12">
         <Link to={"/"}>
