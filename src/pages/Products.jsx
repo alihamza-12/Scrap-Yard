@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Products = () => {
   const { data, isLoading, error } = useGetProductsQuery();
-  console.log(data?.data);
+  // console.log(data?.data);
   const getProducts = data?.data;
 
   if (isLoading)
