@@ -1,4 +1,4 @@
-# Scarb Yard
+# Scrap Yard
 
 A comprehensive React-based web application for scrap yard management, built with modern technologies to provide a seamless user experience for buying and selling scrap materials. The application features user authentication, blog management, contact forms, and responsive design.
 
@@ -62,8 +62,8 @@ A comprehensive React-based web application for scrap yard management, built wit
 1. **Clone the repository**:
 
    ```bash
-   git clone <repository-url>
-   cd scarb-yard
+   git clone https://github.com/alihamza-12/Scrap-Yard
+   cd scrap-yard
    ```
 
 2. **Install dependencies**:
@@ -89,7 +89,7 @@ A comprehensive React-based web application for scrap yard management, built wit
 ## Project Structure & File Descriptions
 
 ```
-scarb-yard/
+Scrap Yard/
 ├── public/
 │   └── vite.svg                    # Default Vite logo asset
 ├── src/
@@ -105,13 +105,22 @@ scarb-yard/
 │   │   ├── scrap_to_cash.jpg      # Main branding image
 │   │   ├── view-bg.jpg            # Background image for views
 │   │   └── blogs/                 # Blog-specific images
-│   │       ├── bg1.jpg to bg6.png # Background images for blog posts
+│   │   │   ├── bg1.jpg            # Background image for blog 1
+│   │   │   ├── bg2.jpg            # Background image for blog 2
+│   │   │   ├── bg3.jpg            # Background image for blog 3
+│   │   │   ├── bg4.jpg            # Background image for blog 4
+│   │   │   ├── bg5.jpg            # Background image for blog 5
+│   │   │   └── bg6.png            # Background image for blog 6
+│   │   └── Slider/                # Slider images for homepage
+│   │       ├── 1.jpg to 10.png    # Slider images
 │   ├── components/                # Reusable UI components
 │   │   ├── AppLayOut/
 │   │   │   └── AppLayOut.jsx      # Main application layout wrapper containing Header, Navbar, Footer, and page outlet
+│   │   ├── Blogs/
+│   │   │   └── BlogsComponent.jsx # Blogs listing component
 │   │   ├── ContactUsForm/
 │   │   │   ├── ContactUsForm.jsx  # Main contact form component with EmailJS integration
-│   │   │   └── ConatactUsFormFooter.jsx  # Footer section of contact form
+│   │   │   └── ContactUsFormFooter.jsx  # Footer section of contact form
 │   │   ├── Footer/
 │   │   │   ├── Footer.jsx         # Main footer component
 │   │   │   ├── FooterCopyRight.jsx # Copyright notice section
@@ -120,11 +129,19 @@ scarb-yard/
 │   │   ├── Header/
 │   │   │   ├── Header.jsx         # Top header component
 │   │   │   └── Navbar.jsx         # Main navigation bar with routing links
+│   │   ├── HomeHeroSection/
+│   │   │   └── HeroSection.jsx    # Hero section for homepage
 │   │   ├── images/                # Component-specific images
 │   │   │   ├── banner3.png        # Additional banner image
 │   │   │   ├── logo.png           # Application logo
 │   │   │   ├── view-bg.jpg        # Background for image views
 │   │   │   ├── blogs/             # Blog images (duplicated from assets)
+│   │   │   │   ├── bg1.jpg        # Blog background 1
+│   │   │   │   ├── bg2.jpg        # Blog background 2
+│   │   │   │   ├── bg3.jpg        # Blog background 3
+│   │   │   │   ├── bg4.jpg        # Blog background 4
+│   │   │   │   ├── bg5.jpg        # Blog background 5
+│   │   │   │   └── bg6.png        # Blog background 6
 │   │   │   ├── footer/            # Footer-specific images
 │   │   │   │   ├── buyer-icon.png # Buyer role icon
 │   │   │   │   ├── download.jpeg  # Download icon
@@ -142,6 +159,8 @@ scarb-yard/
 │   │   │   └── NotFound.jsx       # 404 error page component
 │   │   ├── PagesLayout/
 │   │   │   └── PageLayOut.jsx     # Layout wrapper for specific pages
+│   │   ├── Products/
+│   │   │   └── ProductsComponent.jsx # Products listing component
 │   │   └── UserProfile/
 │   │       └── UserProfile.jsx    # User profile display component
 │   ├── data/                      # Static data files
@@ -153,7 +172,7 @@ scarb-yard/
 │   ├── pages/                    # Page components for routing
 │   │   ├── AboutUs.jsx           # About Us page content
 │   │   ├── Blogs.jsx             # Blogs listing page with grid layout
-│   ├── BlogsDetail.jsx       # Detailed blog post page with 6 comprehensive articles on environmental impact, scrap monetization, household items, recycling innovations, success stories, and recycling importance. Features structured content with images, headings, and navigation.
+│   │   ├── BlogsDetail.jsx       # Detailed blog post page with 6 comprehensive articles on environmental impact, scrap monetization, household items, recycling innovations, success stories, and recycling importance. Features structured content with images, headings, and navigation.
 │   │   ├── ContactUs.jsx         # Contact Us page with form
 │   │   ├── Home.jsx              # Landing/home page
 │   │   ├── Login.jsx             # User login page
@@ -241,8 +260,3 @@ scarb-yard/
 ## License
 
 This project is open source and available under the MIT License.
-
-
-
-
-make Two new folders(Products,Blogs) in the component and then files ProductsCompoent.jsx import in the products.jsx and then also then files BlogsCompoent.jsx import in the Blogs.jsx
