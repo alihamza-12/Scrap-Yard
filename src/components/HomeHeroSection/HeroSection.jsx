@@ -23,17 +23,19 @@ const HeroSection = () => {
     speed: 2000,
     autoplaySpeed: 5500,
     cssEase: "linear",
+    pauseOnFocus: false,
+    pauseOnHover: false,
   };
   //Images
   const images = [img1, img2, img3, img4];
 
   return (
-    <div className="absolute top-0 w-screen h-screen overflow-hidden">
+    <div className="absolute top-0 w-full h-screen">
       <Slider {...settings}>
         {images.map((img, index) => (
           <div key={index}>
             <img
-              className="w-screen h-screen object-cover block"
+              className="w-full h-screen object-cover"
               src={img}
               alt={`slide-${index}`}
             />
